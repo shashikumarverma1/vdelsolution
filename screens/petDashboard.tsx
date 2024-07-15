@@ -13,7 +13,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
 import { T } from "ramda";
 
-export const Dashboard = ({ navigation }) => {
+export const PetDashBoard = ({ navigation }) => {
   const windowWidth = Dimensions.get("window").width;
 
   const categories = [
@@ -47,7 +47,7 @@ export const Dashboard = ({ navigation }) => {
         start={{ x: 0, y: 0 }} // Vertical gradient: start from top
         end={{ x: 0, y: 1 }} // Vertical gradient: end at bottom
         locations={[0, 1]}
-        style={{borderBottomRightRadius:50 ,}}
+        style={{ borderBottomRightRadius: 50 }}
       >
         {/* Your content here */}
         <View style={{ height: 200, marginTop: 40 }}>
@@ -63,45 +63,6 @@ export const Dashboard = ({ navigation }) => {
               style={{ position: "relative", top: -7 }}
             />
           </View>
-          <View
-            style={[
-              styles.justifyBetween,
-              {
-                marginTop: 20,
-                backgroundColor: "#EDFFCE",
-                paddingHorizontal: 20,
-                maxWidth:"80%"
-              },
-            ]}
-          >
-            <View>
-              <Text style={{ fontSize: 18, fontWeight: "400", lineHeight: 24 }}>
-                Welcome,
-              </Text>
-              <Text
-                style={{
-                  fontWeight: "600",
-                  fontSize: 24,
-                  lineHeight: 28,
-                  maxWidth: 200,
-                }}
-              >
-                Find your {"     "} Dream Sector!
-              </Text>
- 
-              <TextInput
-          style={styles.input}
-          // onChangeText={(e) => setUserData({ ...userData, email: e })}
-          // value={userData.email}
-          placeholder="Enter your email"
-        />
- 
-            </View>
-       
-            <View>
-              <Image source={require("../assets/welRight.png")} style={{position:"relative" , left:20}} />
-            </View>
-          </View>
         </View>
       </LinearGradient>
 
@@ -111,7 +72,7 @@ export const Dashboard = ({ navigation }) => {
           { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
         ]}
       >
-        <Text style={styles.SubHeading}>Explore Categories</Text>
+        <Text style={styles.SubHeading}>Popular Services</Text>
         <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons
@@ -123,31 +84,15 @@ export const Dashboard = ({ navigation }) => {
         </Pressable>
       </View>
 
-      <View style={styles.categoriesContainer}>
-        {categories.map((e, index) => (
-          <View key={index} style={styles.categoryContainer}>
-            <LinearGradient
-              colors={[e.color1, e.color2]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 0 }}
-              style={styles.gradient}
-            >
-              <Pressable
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                }}
-                onPress={() => navigation.navigate("PetDashBoard")}
-              >
-                <Text style={{ paddingLeft: 15 }}>
-                  <Ionicons name={e.icon} size={24} color="black" />
-                </Text>
-                <Text style={styles.categoryText}>{e.text}</Text>
-              </Pressable>
-            </LinearGradient>
-          </View>
-        ))}
+       <View>
+      <Image source={require("../assets/petgrooming.png")} />
+        <Image source={require("../assets/walking.png")} />
+        
+        <Image source={require("../assets/dating.png")} />
+        <Image source={require("../assets/training.png")} />
+        <Image source={require("../assets/adoption.png")} />
+      
+        
       </View>
 
       <View
@@ -156,8 +101,8 @@ export const Dashboard = ({ navigation }) => {
           { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
         ]}
       >
-        <Text style={styles.popularSection}>Popular Sectors</Text>
-        <Pressable >
+        <Text style={styles.SubHeading}>Service Providers</Text>
+        <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons
               name="ellipsis-horizontal-outline"
@@ -167,20 +112,14 @@ export const Dashboard = ({ navigation }) => {
           </Text>
         </Pressable>
       </View>
-
-      <View style={[styles.justifyBetween, { paddingHorizontal: 20 }]}>
-        <Image source={require("../assets/home.png")} />
-        <Image source={require("../assets/health.png")} />
-      </View>
-
       <View
         style={[
           styles.justifyBetween,
           { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
         ]}
       >
-        <Text style={styles.popularSection}>Explore Categories</Text>
-        <Pressable>
+        <Text style={styles.SubHeading}>Ratings</Text>
+        <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons
               name="ellipsis-horizontal-outline"
@@ -190,46 +129,6 @@ export const Dashboard = ({ navigation }) => {
           </Text>
         </Pressable>
       </View>
-
-      {[1, 1].map((e, index) => (
-        <View key={index}>
-          <View style={[styles.flex, styles.card]}>
-            <View style={{ margin: 14 }}>
-              <Image source={require("../assets/pink.png")} />
-            </View>
-            <View style={{ paddingLeft: 5 }}>
-              <Text style={styles.cardText}>
-                Now share the Construction Sectors with your anyone and can save
-                it as bookmark
-              </Text>
-              <View>
-                <View style={[styles.justifyBetween, { alignItems: "center" }]}>
-                  <Text
-                    style={{ fontSize: 10, fontWeight: "400", lineHeight: 24 }}
-                  >
-                    Updated | 06:30 AM
-                  </Text>
-                  <Pressable>
-                    <Text style={styles.exploreBtn}>Explore</Text>
-                  </Pressable>
-                </View>
-              </View>
-            </View>
-            <Image
-              source={require("../assets/overboll.png")}
-              style={styles.overboll}
-            />
-            <Image
-              source={require("../assets/rightTop.png")}
-              style={styles.rightTop}
-            />
-          </View>
-          <Image
-            source={require("../assets/bottomleft.png")}
-            style={styles.bottomLeft}
-          />
-        </View>
-      ))}
     </ScrollView>
   );
 };
@@ -334,8 +233,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 20,
     color: "#666666",
-    backgroundColor:"#ffffff"
+    backgroundColor: "#ffffff",
   },
 });
 
-export default Dashboard;
+export default PetDashBoard;

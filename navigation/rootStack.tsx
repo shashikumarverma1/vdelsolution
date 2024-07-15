@@ -8,6 +8,7 @@ import { Watchlisted } from '../screens/Watchlist';
 import { TrendingCoin } from '../screens/TrendingCoin';
 import { CoinDetails } from '../screens/CoinDetails';
 import { LineCharts } from '../components/LineChart';
+import PetDashBoard from '../screens/petDashboard';
 
 
 
@@ -18,6 +19,7 @@ function RootStack() {
     <Stack.Navigator screenOptions={{ animationEnabled: false, headerShown: false }}>
    
        <Stack.Screen name="Home" component={Dashboard} />
+       <Stack.Screen name="PetDashBoard" component={PetDashBoard} />
       
     </Stack.Navigator>
   );

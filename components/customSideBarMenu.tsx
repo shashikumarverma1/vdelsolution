@@ -10,33 +10,13 @@ import {
   Share,
   Linking,
 } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ScrollView } from "react-native-gesture-handler";
-import { GlobalInfo } from "../context/userDetails";
+
 const CustomSidebarMenu = ({ navigation }: { navigation: any }) => {
  
 
-  const onShare = async () => {
-    try {
-      const result = await Share.share({
-        message: `Check out this amazing app: https://play.google.com/store/apps/details?id=com.ssfindia`,
-      });
-      // https://play.google.com/store/apps/details?id=com.ssfindia
-      if (result.action === Share.sharedAction) {
-        if (result.activityType) {
-          // shared with activity type of result.activityType
-        } else {
-          // shared
-        }
-      } else if (result.action === Share.dismissedAction) {
-        // dismissed
-      }
-    } catch (error: any) {
-      Alert.alert(error.message);
-    }
-  };
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView style={{ marginTop: 50 }}>
