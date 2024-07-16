@@ -13,10 +13,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
 import { GlobalInfo } from "../context/dashDetail";
 
-
 export const Dashboard = ({ navigation }) => {
   const windowWidth = Dimensions.get("window").width;
-  const {dashColor , setDashColor} = useContext(GlobalInfo)
+  const { dashColor, setDashColor } = useContext(GlobalInfo);
   const categories = [
     {
       color1: "#FFFFFF",
@@ -42,7 +41,7 @@ export const Dashboard = ({ navigation }) => {
   ];
 
   return (
-    <ScrollView style={{ marginTop: 20 , backgroundColor:"#fffffff" }}>
+    <ScrollView style={{ marginTop: 20, backgroundColor: "#ffffff" }}>
       <LinearGradient
         colors={["#9766FF", "#F7F3FF"]}
         start={{ x: 0, y: 0 }} // Vertical gradient: start from top
@@ -64,98 +63,141 @@ export const Dashboard = ({ navigation }) => {
               style={{ position: "relative", top: -7 }}
             />
           </View>
-          <View
-            style={[
-              styles.justifyBetween,
-              {
-                marginTop: 20,
-                backgroundColor: "#EDFFCE",
-                paddingHorizontal: 20,
-                maxWidth: "80%",
-              },
-            ]}
-          >
-            <View>
-              <Text style={{ fontSize: 18, fontWeight: "400", lineHeight: 24 }}>
-                Welcome,
-              </Text>
-              <Text
-                style={{
-                  fontWeight: "600",
-                  fontSize: 24,
-                  lineHeight: 28,
-                  maxWidth: 200,
-                }}
-              >
-                Find your {"     "} Dream Sector!
-              </Text>
-
-              <TextInput
-                style={styles.input}
-                // onChangeText={(e) => setUserData({ ...userData, email: e })}
-                // value={userData.email}
-                placeholder="Enter your email"
-              />
-            </View>
-
-            <View>
-              <Image
-                source={require("../assets/welRight.png")}
-                style={{ position: "relative", left: 20 }}
-              />
-            </View>
-          </View>
         </View>
       </LinearGradient>
-
-      <View
+     <View style={{}}>
+     <View
         style={[
           styles.justifyBetween,
-          { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
+          {
+            marginTop: 20,
+            backgroundColor: "#EDFFCE",
+            paddingHorizontal: 20,
+            maxWidth: "80%",
+            borderTopEndRadius: 20,
+            borderBottomEndRadius: 20,
+            position: "relative",
+            top: -150,
+            borderTopLeftRadius: 20,
+          },
         ]}
       >
-        <Text style={styles.SubHeading}>Explore Categories</Text>
-        <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
-          <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
-            <Ionicons
-              name="ellipsis-horizontal-outline"
-              size={24}
-              color="black"
-            />
+        <View>
+          <Text
+            style={{
+              fontSize: 18,
+              fontWeight: "400",
+              lineHeight: 24,
+              marginBottom: 5,
+              paddingTop: 30,
+            }}
+          >
+            Welcome,
           </Text>
-        </Pressable>
+          <Text
+            style={{
+              fontWeight: "600",
+              fontSize: 24,
+              lineHeight: 28,
+              maxWidth: 200,
+              marginBottom: 5,
+            }}
+          >
+            Find your {"     "} Dream Sector!
+          </Text>
+
+         <View style={[{display:"flex" ,flexDirection:"row" ,alignItems:"center"}, styles.input , {  width:windowWidth*.65}]}>
+         <Image
+            source={require("../assets/Search2.png")}
+           
+          />
+         <TextInput
+            style={{paddingLeft:5, fontWeight:"400" , fontSize:12 , lineHeight:14}}
+            // onChangeText={(e) => setUserData({ ...userData, email: e })}
+            // value={userData.email}
+            placeholder="What are you looking for?"
+          />
+         </View>
+        </View>
+
+        <View>
+          <Image
+            source={require("../assets/welRight.png")}
+            style={{ position: "relative", left: -64 }}
+          />
+        </View>
+      </View>
+     </View>
+      <View>
+        <View
+          style={{
+            height: 30,
+            backgroundColor: "#EDFFCE",
+            width: "20%",
+            marginTop: -150,
+          }}
+        />
       </View>
 
-      <View style={styles.categoriesContainer}>
-        {categories.map((e, index) => (
-          <View key={index} style={styles.categoryContainer}>
-            <LinearGradient
-              colors={[e.color1, e.color2]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 0 }}
-              style={styles.gradient}
-            >
-              <Pressable
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                }}
-                onPress={() =>{
-                  setDashColor("#FFE7EA")
-                   navigation.navigate("PetDashBoard")
-                  }}
+      <View
+        style={{
+          marginTop: -150,
+          backgroundColor: "#ffffff",
+          borderTopLeftRadius: 25,
+        }}
+      >
+        <View
+          style={[
+            styles.justifyBetween,
+            {
+              marginTop: 20,
+              marginBottom: 10,
+              paddingHorizontal: 20,
+              backgroundColor: "#ffffff",
+            },
+          ]}
+        >
+          <Text style={styles.SubHeading}>Explore Categories</Text>
+          <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
+            <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
+              <Ionicons
+                name="ellipsis-horizontal"
+                size={24}
+                color="black"
+              />
+            </Text>
+          </Pressable>
+        </View>
+        <View style={styles.categoriesContainer}>
+          {categories.map((e, index) => (
+            <View key={index} style={styles.categoryContainer}>
+              <LinearGradient
+                colors={[e.color1, e.color2]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+                style={styles.gradient}
               >
-                <Text style={{ paddingLeft: 15 }}>
-                  <Ionicons name={e.icon} size={24} color="black" />
-                </Text>
-                <Text style={styles.categoryText}>{e.text}</Text>
-              </Pressable>
-            </LinearGradient>
-          </View>
-        ))}
+                <Pressable
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                  onPress={() => {
+                    setDashColor("#FFE7EA");
+                    navigation.navigate("PetDashBoard");
+                  }}
+                >
+                  <Text style={{ paddingLeft: 15 }}>
+                    <Ionicons name={e.icon} size={24} color="black" />
+                  </Text>
+                  <Text style={styles.categoryText}>{e.text}</Text>
+                </Pressable>
+              </LinearGradient>
+            </View>
+          ))}
+        </View>
       </View>
-
       <View
         style={[
           styles.justifyBetween,
@@ -166,7 +208,7 @@ export const Dashboard = ({ navigation }) => {
         <Pressable>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons
-              name="ellipsis-horizontal-outline"
+              name="ellipsis-horizontal"
               size={24}
               color="black"
             />
@@ -185,11 +227,11 @@ export const Dashboard = ({ navigation }) => {
           { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
         ]}
       >
-        <Text style={styles.popularSection}>Explore Categories</Text>
+        <Text style={styles.popularSection}>Recommended for you</Text>
         <Pressable>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons
-              name="ellipsis-horizontal-outline"
+              name="ellipsis-horizontal"
               size={24}
               color="black"
             />
@@ -332,7 +374,7 @@ const styles = StyleSheet.create({
     left: 20,
   },
   input: {
-    width: "100%",
+    // width: "100%",
     height: 40,
     // borderWidth: 1,
     borderColor: "#ccc",

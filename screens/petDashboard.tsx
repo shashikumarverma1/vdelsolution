@@ -46,7 +46,7 @@ export const PetDashBoard = ({ navigation }) => {
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
         style={{
-          paddingTop: 65,
+          paddingTop: 55,
           paddingHorizontal: 24,
           height: 350,
         }}
@@ -58,7 +58,7 @@ export const PetDashBoard = ({ navigation }) => {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
-            marginBottom: 50,
+            marginBottom: 40,
           }}
         >
           <Image
@@ -108,7 +108,7 @@ export const PetDashBoard = ({ navigation }) => {
           />
           <Image
             source={require("../assets/rightdogfoot.png")}
-            style={{ position: "relative", left: windowWidth * 0.8, top: -100 }}
+            style={{ position: "relative", left: windowWidth * 0.85, top: -100 }}
           />
         </View>
         <View
@@ -131,19 +131,22 @@ export const PetDashBoard = ({ navigation }) => {
           borderTopRightRadius: 30,
           borderTopLeftRadius: 30,
           backgroundColor: "#ffffff",
-          height: 50,
+          height: 70,
           position: "relative",
-          top: -45,
+          top: -65,
           zIndex: 1,
         }}
       />
-      <View
+     <View style={{marginTop:-85}}>
+     <View
         style={[
           styles.justifyBetween,
           {
             // backgroundColor: "#FFEDF2",
             marginHorizontal: 20,
             marginBottom: 15,
+            marginTop:0,
+            zIndex:1
           },
         ]}
       >
@@ -180,9 +183,10 @@ export const PetDashBoard = ({ navigation }) => {
           <Image source={require("../assets/filter.png")} />
         </View>
       </View>
+     </View>
 
       <View style={styles.center}>
-        <Image source={require("../assets/banner.png")} />
+        <Image source={require("../assets/banner.png")} style={{marginTop:-5}} />
       </View>
 
       <View
@@ -195,7 +199,7 @@ export const PetDashBoard = ({ navigation }) => {
         <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons
-              name="ellipsis-horizontal-outline"
+              name="ellipsis-horizontal"
               size={24}
               color="black"
             />
@@ -234,7 +238,7 @@ export const PetDashBoard = ({ navigation }) => {
         <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons
-              name="ellipsis-horizontal-outline"
+              name="ellipsis-horizontal"
               size={24}
               color="black"
             />
@@ -242,7 +246,7 @@ export const PetDashBoard = ({ navigation }) => {
         </Pressable>
       </View>
       <View>
-        {[1].map((e, index) => {
+        {[1,1,2].map((e, index) => {
           return (
             <View style={{ marginVertical: 5, marginBottom: -90 }} key={index}>
               <View
@@ -343,7 +347,7 @@ export const PetDashBoard = ({ navigation }) => {
         <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons
-              name="ellipsis-horizontal-outline"
+              name="ellipsis-horizontal"
               size={24}
               color="black"
             />
