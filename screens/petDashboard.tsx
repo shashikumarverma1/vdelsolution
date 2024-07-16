@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
-import { T } from "ramda";
 
 export const PetDashBoard = ({ navigation }) => {
   const windowWidth = Dimensions.get("window").width;
@@ -41,30 +40,150 @@ export const PetDashBoard = ({ navigation }) => {
   ];
 
   return (
-    <ScrollView style={{ marginTop: 20 }}>
+    <ScrollView style={{ marginTop: 20, backgroundColor: "#ffffff" }}>
       <LinearGradient
-        colors={["#9766FF", "#F7F3FF"]}
-        start={{ x: 0, y: 0 }} // Vertical gradient: start from top
-        end={{ x: 0, y: 1 }} // Vertical gradient: end at bottom
-        locations={[0, 1]}
-        style={{ borderBottomRightRadius: 50 }}
+        colors={["#FFB5B1", "#CD7ED9"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+        style={{
+          paddingTop: 65,
+          paddingHorizontal: 24,
+          height: 350,
+        }}
       >
         {/* Your content here */}
-        <View style={{ height: 200, marginTop: 40 }}>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 50,
+          }}
+        >
+          <Image
+            source={require("../assets/menu2.png")}
+            style={{ marginRight: 5 }}
+          />
+          <Image
+            source={require("../assets/infinity2.png")}
+            style={{ marginRight: 5 }}
+          />
           <View
             style={[
-              styles.justifyBetween,
-              { alignItems: "center", paddingHorizontal: 20 },
+              { padding: 10, backgroundColor: "#FFD7E5", borderRadius: 9 },
             ]}
           >
-            <Image source={require("../assets/menu.png")} />
             <Image
-              source={require("../assets/infinity.png")}
-              style={{ position: "relative", top: -7 }}
+              source={require("../assets/bell.png")}
+              style={{ marginRight: 5 }}
             />
           </View>
         </View>
+        <View>
+          <Text
+            style={{
+              fontSize: 20,
+              lineHeight: 23,
+              fontWeight: "700",
+
+              marginBottom: 10,
+            }}
+          >
+            Hello,
+          </Text>
+          <Text
+            style={{
+              fontSize: 16,
+              lineHeight: 19,
+              fontWeight: "500",
+              marginBottom: 10,
+            }}
+          >
+            Fancy for a wash today!
+          </Text>
+          <Image
+            source={require("../assets/leftdogfoot.png")}
+            style={{ position: "relative", top: 25 }}
+          />
+          <Image
+            source={require("../assets/rightdogfoot.png")}
+            style={{ position: "relative", left: windowWidth * 0.8, top: -100 }}
+          />
+        </View>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            position: "relative",
+            top: -60,
+            zIndex: 2,
+          }}
+        >
+          <Image source={require("../assets/dog1.png")} style={{}} />
+          <Image source={require("../assets/dog2.png")} style={{}} />
+          <Image source={require("../assets/dog3.png")} style={{}} />
+        </View>
       </LinearGradient>
+      <View
+        style={{
+          borderTopRightRadius: 30,
+          borderTopLeftRadius: 30,
+          backgroundColor: "#ffffff",
+          height: 50,
+          position: "relative",
+          top: -45,
+          zIndex: 1,
+        }}
+      />
+      <View
+        style={[
+          styles.justifyBetween,
+          {
+            // backgroundColor: "#FFEDF2",
+            marginHorizontal: 20,
+            marginBottom: 15,
+          },
+        ]}
+      >
+        <View
+          style={[
+            styles.input,
+            {
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              paddingHorizontal: 16,
+            },
+          ]}
+        >
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <Image
+              source={require("../assets/search.png")}
+              style={{ marginRight: 5 }}
+            />
+            <TextInput
+              // style={styles.input}
+              // onChangeText={(e) => setUserData({ ...userData, email: e })}
+              // value={userData.email}
+              placeholder="Enter your email"
+            />
+          </View>
+          <Image source={require("../assets/filter.png")} />
+        </View>
+      </View>
+
+      <View style={styles.center}>
+        <Image source={require("../assets/banner.png")} />
+      </View>
 
       <View
         style={[
@@ -84,15 +203,25 @@ export const PetDashBoard = ({ navigation }) => {
         </Pressable>
       </View>
 
-       <View>
-      <Image source={require("../assets/petgrooming.png")} />
-        <Image source={require("../assets/walking.png")} />
-        
-        <Image source={require("../assets/dating.png")} />
-        <Image source={require("../assets/training.png")} />
-        <Image source={require("../assets/adoption.png")} />
-      
-        
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-between",
+          paddingHorizontal: 20,
+        }}
+      >
+        <Image
+          source={require("../assets/petgrooming.png")}
+          style={styles.img}
+        />
+        <Image source={require("../assets/walking.png")} style={styles.img} />
+
+        <Image source={require("../assets/dating.png")} style={styles.img} />
+        <Image source={require("../assets/training.png")} style={styles.img} />
+        <Image source={require("../assets/adoption.png")} style={styles.img} />
       </View>
 
       <View
@@ -112,6 +241,98 @@ export const PetDashBoard = ({ navigation }) => {
           </Text>
         </Pressable>
       </View>
+      <View>
+        {[1].map((e, index) => {
+          return (
+            <View style={{ marginVertical: 5, marginBottom: -90 }} key={index}>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  marginHorizontal: 20,
+                  backgroundColor: "#FFE7EA",
+                  borderRadius: 15,
+                }}
+              >
+                <View>
+                  <Image
+                    source={require("../assets/man.png")}
+                    style={{ margin: 20 }}
+                  />
+                </View>
+
+                <View>
+                  <Text
+                    style={{
+                      color: "#000000",
+                      fontSize: 14,
+                      lineHeight: 16,
+                      fontWeight: "600",
+                      marginBottom: 3,
+                    }}
+                  >
+                    Rohit Singhania
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      lineHeight: 14,
+                      fontWeight: "400",
+                      maxWidth: "85%",
+                      marginBottom: 8,
+                    }}
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Eget commodo ipsum.
+                  </Text>
+                  <View
+                    style={{
+                      backgroundColor: "#CF76DD",
+                      maxWidth: 100,
+                      borderRadius: 4,
+                    }}
+                  >
+                    <Pressable>
+                      <Text
+                        style={{
+                          textAlign: "center",
+                          paddingVertical: 2,
+                          paddingHorizontal: 12,
+                          color: "#ffffff",
+                        }}
+                      >
+                        Know More
+                      </Text>
+                    </Pressable>
+                  </View>
+                </View>
+              </View>
+              <Image
+                source={require("../assets/providerBottomLeft.png")}
+                style={{
+                  position: "relative",
+                  top: -50,
+                  left: 18,
+                  zIndex: 1,
+                  resizeMode: "cover",
+                  borderRadius: 10,
+                }}
+              />
+              <Image
+                source={require("../assets/providerTopRight.png")}
+                style={{
+                  position: "relative",
+                  top: -145,
+                  left: 316,
+                  zIndex: 1,
+                  resizeMode: "cover",
+                  borderRadius: 10,
+                }}
+              />
+            </View>
+          );
+        })}
+      </View>
       <View
         style={[
           styles.justifyBetween,
@@ -129,6 +350,80 @@ export const PetDashBoard = ({ navigation }) => {
           </Text>
         </Pressable>
       </View>
+      {[1, 2].map((e, index) => {
+        return (
+          <View
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "row",
+              marginVertical: 5,
+            }}
+          >
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                borderColor: "#FFCCD2",
+                borderWidth: 1,
+                marginHorizontal: 20,
+                borderRadius: 20,
+                alignItems: "center",
+              }}
+            >
+              <View style={{ paddingLeft: 18 }}>
+                <Text>Pooja Jain</Text>
+                <View style={{ display: "flex", flexDirection: "row" }}>
+                  {[1, 2, 3, 4].map((e, index) => {
+                    return (
+                      <Image
+                        source={require("../assets/bone2.png")}
+                        style={{ margin: 1, borderBottomRightRadius: 20 }}
+                      />
+                    );
+                  })}
+                  <Image
+                    source={require("../assets/bone1.png")}
+                    style={{ margin: 1 }}
+                  />
+                </View>
+                <Text
+                  style={{
+                    fontWeight: "400",
+                    fontSize: 10,
+                    lineHeight: 14,
+                    width: "80%",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur. Eget commodo ipsum.
+                </Text>
+              </View>
+              <View>
+                {index == 0 && (
+                  <Image
+                    source={require("../assets/pooja1.png")}
+                    style={{
+                      marginLeft: -35,
+                      borderBottomRightRadius: 20,
+                      borderTopRightRadius: 20,
+                    }}
+                  />
+                )}
+                {index == 1 && (
+                  <Image
+                    source={require("../assets/pooja2.png")}
+                    style={{
+                      marginLeft: -35,
+                      borderBottomRightRadius: 20,
+                      borderTopRightRadius: 20,
+                    }}
+                  />
+                )}
+              </View>
+            </View>
+          </View>
+        );
+      })}
     </ScrollView>
   );
 };
@@ -146,6 +441,9 @@ const styles = StyleSheet.create({
   popularSection: {
     fontSize: 14,
     fontWeight: "800",
+  },
+  img: {
+    // margin:5
   },
   justifyBetween: {
     display: "flex",
@@ -168,6 +466,12 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     alignItems: "center",
     marginLeft: 10,
+  },
+  center: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   gradient: {
     paddingVertical: 12,
@@ -233,7 +537,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 20,
     color: "#666666",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#FFEDF2",
   },
 });
 

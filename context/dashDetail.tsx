@@ -1,12 +1,11 @@
 import React, { createContext, useEffect, useState } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 export const GlobalInfo = createContext(null);
 const ContextProvider = ({ children }: any) => {
-  const [userDetails, setUserDetails] = useState<any>(true);
+  const [dashColor, setDashColor] = useState<any>('#EEE6FF');
 
   return (
     <GlobalInfo.Provider
-      value={{ userDetails, setUserDetails }}
+      value={{dashColor, setDashColor}}
     >
       {children}
     </GlobalInfo.Provider>

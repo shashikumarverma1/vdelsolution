@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   View,
   Text,
@@ -11,11 +11,12 @@ import {
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
-import { T } from "ramda";
+import { GlobalInfo } from "../context/dashDetail";
+
 
 export const Dashboard = ({ navigation }) => {
   const windowWidth = Dimensions.get("window").width;
-
+  const {dashColor , setDashColor} = useContext(GlobalInfo)
   const categories = [
     {
       color1: "#FFFFFF",
@@ -41,13 +42,13 @@ export const Dashboard = ({ navigation }) => {
   ];
 
   return (
-    <ScrollView style={{ marginTop: 20 }}>
+    <ScrollView style={{ marginTop: 20 , backgroundColor:"#fffffff" }}>
       <LinearGradient
         colors={["#9766FF", "#F7F3FF"]}
         start={{ x: 0, y: 0 }} // Vertical gradient: start from top
         end={{ x: 0, y: 1 }} // Vertical gradient: end at bottom
         locations={[0, 1]}
-        style={{borderBottomRightRadius:50 ,}}
+        style={{ borderBottomRightRadius: 50 }}
       >
         {/* Your content here */}
         <View style={{ height: 200, marginTop: 40 }}>
@@ -70,7 +71,7 @@ export const Dashboard = ({ navigation }) => {
                 marginTop: 20,
                 backgroundColor: "#EDFFCE",
                 paddingHorizontal: 20,
-                maxWidth:"80%"
+                maxWidth: "80%",
               },
             ]}
           >
@@ -88,18 +89,20 @@ export const Dashboard = ({ navigation }) => {
               >
                 Find your {"     "} Dream Sector!
               </Text>
- 
+
               <TextInput
-          style={styles.input}
-          // onChangeText={(e) => setUserData({ ...userData, email: e })}
-          // value={userData.email}
-          placeholder="Enter your email"
-        />
- 
+                style={styles.input}
+                // onChangeText={(e) => setUserData({ ...userData, email: e })}
+                // value={userData.email}
+                placeholder="Enter your email"
+              />
             </View>
-       
+
             <View>
-              <Image source={require("../assets/welRight.png")} style={{position:"relative" , left:20}} />
+              <Image
+                source={require("../assets/welRight.png")}
+                style={{ position: "relative", left: 20 }}
+              />
             </View>
           </View>
         </View>
@@ -138,7 +141,10 @@ export const Dashboard = ({ navigation }) => {
                   flexDirection: "row",
                   alignItems: "center",
                 }}
-                onPress={() => navigation.navigate("PetDashBoard")}
+                onPress={() =>{
+                  setDashColor("#FFE7EA")
+                   navigation.navigate("PetDashBoard")
+                  }}
               >
                 <Text style={{ paddingLeft: 15 }}>
                   <Ionicons name={e.icon} size={24} color="black" />
@@ -157,7 +163,7 @@ export const Dashboard = ({ navigation }) => {
         ]}
       >
         <Text style={styles.popularSection}>Popular Sectors</Text>
-        <Pressable >
+        <Pressable>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons
               name="ellipsis-horizontal-outline"
@@ -334,7 +340,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 20,
     color: "#666666",
-    backgroundColor:"#ffffff"
+    backgroundColor: "#ffffff",
   },
 });
 

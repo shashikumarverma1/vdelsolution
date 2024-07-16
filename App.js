@@ -2,14 +2,16 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import DraweNavigation from "./navigation/drawerNavigation";
-import ContextProvider from "./context/userDetails";
-import WatchlistProvider from "./context/watchlistData";
+import ContextProvider from "./context/dashDetail";
 export default function App() {
   return (
-    
-        <NavigationContainer>
-          <DraweNavigation />
-        </NavigationContainer>
+    <ContextProvider>
+ <NavigationContainer>
+    <DraweNavigation />
+  </NavigationContainer>
+    </ContextProvider>
+   
+      
       
   );
 }
