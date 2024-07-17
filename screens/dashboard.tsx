@@ -73,39 +73,17 @@ export const Dashboard = ({ navigation }) => {
         <View
           style={[
             styles.justifyBetween,
-            {
-              marginTop: 20,
-              backgroundColor: "#EDFFCE",
-              paddingHorizontal: 20,
-              maxWidth: "80%",
-              borderTopEndRadius: 20,
-              borderBottomEndRadius: 20,
-              position: "relative",
-              top: -120,
-              borderTopLeftRadius: 20,
-            },
+         styles.welcomeSection
           ]}
         >
           <View>
             <Text
-              style={{
-                fontSize: 18,
-                fontWeight: "400",
-                lineHeight: 24,
-                marginBottom: 5,
-                paddingTop: 30,
-              }}
+              style={styles.welcomeText}
             >
               Welcome,
             </Text>
             <Text
-              style={{
-                fontWeight: "600",
-                fontSize: 24,
-                lineHeight: 28,
-                maxWidth: 200,
-                marginBottom: 5,
-              }}
+              style={styles.findText}
             >
               Find your {"     "} Dream Sector!
             </Text>
@@ -163,12 +141,7 @@ export const Dashboard = ({ navigation }) => {
         <View
           style={[
             styles.justifyBetween,
-            {
-              marginTop: 20,
-              marginBottom: 10,
-              paddingHorizontal: 25,
-              backgroundColor: "#ffffff",
-            },
+          styles.explore
           ]}
         >
           <Text style={styles.SubHeading}>Explore Categories</Text>
@@ -188,11 +161,7 @@ export const Dashboard = ({ navigation }) => {
                 style={styles.gradient}
               >
                 <Pressable
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  }}
+                  style={styles.align_center}
                   onPress={() => {
                     setDashColor("#FFE7EA");
                     navigation.navigate("PetDashBoard");
@@ -322,10 +291,50 @@ export const Dashboard = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  findText:{
+    fontWeight: "600",
+    fontSize: 24,
+    lineHeight: 28,
+    maxWidth: 200,
+    marginBottom: 5,
+  },
+  welcomeText:{
+    fontSize: 18,
+    fontWeight: "400",
+    lineHeight: 24,
+    marginBottom: 5,
+    paddingTop: 30,
+  },
+  welcomeSection:   {
+    marginTop: 20,
+    backgroundColor: "#EDFFCE",
+    paddingHorizontal: 20,
+    maxWidth: "80%",
+    borderTopEndRadius: 20,
+    borderBottomEndRadius: 20,
+    position: "relative",
+    top: -120,
+    borderTopLeftRadius: 20,
+  },
   heading: {
     textAlign: "center",
     fontSize: 17,
     fontWeight: "600",
+  },
+  explore:{
+    
+      marginTop: 20,
+      marginBottom: 10,
+      paddingHorizontal: 25,
+      backgroundColor: "#ffffff",
+    
+  },
+  align_center:{
+    
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+    
   },
   SubHeading: {
     fontSize: 14,
