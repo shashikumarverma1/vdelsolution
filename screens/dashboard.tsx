@@ -186,16 +186,19 @@ export const Dashboard = ({ navigation }) => {
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
+                   
                   }}
                   onPress={() => {
                     setDashColor("#FFE7EA");
                     navigation.navigate("PetDashBoard");
                   }}
                 >
-                  <Image
-                 source={require("../assets/icon1.png")}
-
-                  />
+                 { index==0 && <Image source={require("../assets/icon6.png")} style={styles.categoryText} />}
+                 { index==1 && <Image source={require("../assets/icon1.png")} style={styles.categoryText} />}
+                 { index==2 && <Image source={require("../assets/icon5.png")} style={styles.categoryText} />}
+                 { index==3 && <Image source={require("../assets/icon4.png")} style={styles.categoryText} />}
+                 { index==4 && <Image source={require("../assets/icon2.png")} style={styles.categoryText} />}
+                 { index==5 && <Image source={require("../assets/icon3.png")} style={styles.categoryText} />}
                   <Text style={styles.categoryText}>{e.text}</Text>
                 </Pressable>
               </LinearGradient>
@@ -320,6 +323,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: "center",
     width: "100%",
+    paddingHorizontal:5
   },
   categoryText: {
     fontSize: 12,
