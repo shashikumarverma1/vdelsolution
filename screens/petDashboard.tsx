@@ -187,7 +187,8 @@ export const PetDashBoard = ({ navigation }) => {
                 // style={styles.input}
                 // onChangeText={(e) => setUserData({ ...userData, email: e })}
                 // value={userData.email}
-                placeholder="Enter your email"
+                placeholder="What are you looking for?"
+                placeholderTextColor="#FF6694"
               />
             </View>
             <Image source={require("../assets/filter.png")} />
@@ -228,13 +229,13 @@ export const PetDashBoard = ({ navigation }) => {
       >
         <Image
           source={require("../assets/petgrooming.png")}
-          style={styles.img}
+          style={styles.img} resizeMethod="cover"
         />
-        <Image source={require("../assets/walking.png")} style={styles.img} />
+        <Image source={require("../assets/walking.png")} style={styles.img} resizeMethod="cover" />
 
-        <Image source={require("../assets/dating.png")} style={styles.img} />
-        <Image source={require("../assets/training.png")} style={styles.img} />
-        <Image source={require("../assets/adoption.png")} style={styles.img} />
+        <Image source={require("../assets/dating.png")} style={styles.img} resizeMethod="cover" />
+        <Image source={require("../assets/training.png")} style={styles.img} resizeMethod="cover" />
+        <Image source={require("../assets/adoption.png")} style={styles.img} resizeMethod="contain" />
       </View>
 
       <View
@@ -353,6 +354,33 @@ export const PetDashBoard = ({ navigation }) => {
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
             <Ionicons name="ellipsis-horizontal" size={24} color="black" />
           </Text>
+        </Pressable>
+      </View>
+      <View
+        style={[
+          styles.justifyBetween,
+          { marginTop: -5, marginBottom: 15, paddingHorizontal: 25 },
+        ]}
+      >
+        <Text style={{
+            fontSize: 12,
+            fontWeight: "600",
+            lineHeight:14,
+            color:"#FF6694"
+        }}>13 Reviews</Text>
+        <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
+         
+          <View style={[styles.flex]}>
+          <Text style={[styles.SubHeading, { color: "#FF6694" }]}>
+          Write a Review{" "}
+          </Text>
+          <Text style={[styles.SubHeading, { color: "#FF6694" }]}>
+          <Image
+                source={require("../assets/icon10.png")}
+              
+              />
+          </Text>
+          </View>
         </Pressable>
       </View>
       {[1, 2].map((e, index) => {

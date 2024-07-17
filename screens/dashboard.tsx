@@ -102,7 +102,7 @@ export const Dashboard = ({ navigation }) => {
                   fontWeight: "400",
                   fontSize: 12,
                   lineHeight: 14,
-                  // color:"#959595"
+                
                 }}
                 // onChangeText={(e) =>{}}
                 // value={""}
@@ -225,8 +225,8 @@ export const Dashboard = ({ navigation }) => {
       </View>
 
       <View style={[styles.justifyBetween, { paddingHorizontal: 20 }]}>
-        <Image source={require("../assets/home.png")} />
-        <Image source={require("../assets/health.png")} />
+        <Image source={require("../assets/home.png")} resizeMethod="cover" />
+        <Image source={require("../assets/health.png")} resizeMethod="cover" />
       </View>
 
       <View
