@@ -40,7 +40,7 @@ function BottomTabs() {
               style={{
                 backgroundColor: focused ? dashColor : 'transparent', // Set the background color on selected tab
                 borderRadius: 25,
-                paddingHorizontal: 24,
+                paddingHorizontal: 25,
                 paddingVertical:8,
                 display:"flex", flexDirection:"row" , alignItems:"center",
               

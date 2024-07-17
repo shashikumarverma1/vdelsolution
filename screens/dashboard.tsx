@@ -50,11 +50,11 @@ export const Dashboard = ({ navigation }) => {
         style={{ borderBottomRightRadius: 50 }}
       >
         {/* Your content here */}
-        <View style={{ height: 200, marginTop: 40 }}>
+        <View style={{ height: 180, marginTop: 40 }}>
           <View
             style={[
               styles.justifyBetween,
-              { alignItems: "center", paddingHorizontal: 20 },
+              { alignItems: "center", paddingHorizontal: 20, marginTop:20 },
             ]}
           >
             <Pressable onPress={() => navigation.openDrawer()}>
@@ -81,7 +81,7 @@ export const Dashboard = ({ navigation }) => {
               borderTopEndRadius: 20,
               borderBottomEndRadius: 20,
               position: "relative",
-              top: -150,
+              top: -120,
               borderTopLeftRadius: 20,
             },
           ]}
@@ -148,14 +148,14 @@ export const Dashboard = ({ navigation }) => {
             height: 30,
             backgroundColor: "#EDFFCE",
             width: "20%",
-            marginTop: -150,
+            marginTop: -120,
           }}
         />
       </View>
 
       <View
         style={{
-          marginTop: -150,
+          marginTop: -120,
           backgroundColor: "#ffffff",
           borderTopLeftRadius: 25,
         }}
@@ -166,7 +166,7 @@ export const Dashboard = ({ navigation }) => {
             {
               marginTop: 20,
               marginBottom: 10,
-              paddingHorizontal: 20,
+              paddingHorizontal: 25,
               backgroundColor: "#ffffff",
             },
           ]}
@@ -244,7 +244,7 @@ export const Dashboard = ({ navigation }) => {
       <View
         style={[
           styles.justifyBetween,
-          { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
+          { marginTop: 20, marginBottom: 10, paddingHorizontal: 25 },
         ]}
       >
         <Text style={styles.popularSection}>Popular Sectors</Text>
@@ -263,7 +263,7 @@ export const Dashboard = ({ navigation }) => {
       <View
         style={[
           styles.justifyBetween,
-          { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
+          { marginTop: 20, marginBottom: 10, paddingHorizontal: 25 },
         ]}
       >
         <Text style={styles.popularSection}>Recommended for you</Text>
@@ -349,13 +349,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     // justifyContent: "space-between",
-    paddingHorizontal: 20,
+    paddingHorizontal: 25,
   },
   categoryContainer: {
     // width: '48%',
     marginVertical: 10,
     alignItems: "center",
-    marginLeft: 10,
+    marginRight: 10,
   },
   gradient: {
     paddingVertical: 12,

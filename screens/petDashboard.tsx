@@ -26,16 +26,14 @@ export const PetDashBoard = ({ navigation }) => {
       color1: "#FFFFFF",
       color2: "#FFE9BE",
       text: "Entertainment",
-      icon: "person",
     },
-    { color1: "#FEF2F3", color2: "#FFB0DD", text: "Pet Care", icon: "person" },
-    { color1: "#FFFFFF", color2: "#C0FCF6", text: "Home Care", icon: "person" },
-    { color1: "#FFFFFF", color2: "#FFC8AB", text: "Events", icon: "person" },
+    { color1: "#FEF2F3", color2: "#FFB0DD", text: "Pet Care" },
+    { color1: "#FFFFFF", color2: "#C0FCF6", text: "Home Care" },
+    { color1: "#FFFFFF", color2: "#FFC8AB", text: "Events" },
     {
       color1: "#FFFFFF",
       color2: "#CFCFFF",
       text: "Healthcare",
-      icon: "person",
     },
   ];
 
@@ -62,7 +60,6 @@ export const PetDashBoard = ({ navigation }) => {
           }}
         >
           <Pressable onPress={() => navigation.openDrawer()}>
-           
             <Image
               source={require("../assets/menu2.png")}
               style={{ marginRight: 5 }}
@@ -75,7 +72,12 @@ export const PetDashBoard = ({ navigation }) => {
           />
           <View
             style={[
-              { padding: 10,paddingLeft:15, backgroundColor: "#FFD7E5", borderRadius: 9 },
+              {
+                padding: 10,
+                paddingLeft: 15,
+                backgroundColor: "#FFD7E5",
+                borderRadius: 9,
+              },
             ]}
           >
             <Image
@@ -151,7 +153,7 @@ export const PetDashBoard = ({ navigation }) => {
             styles.justifyBetween,
             {
               // backgroundColor: "#FFEDF2",
-              marginHorizontal: 20,
+              marginHorizontal: 25,
               marginBottom: 1,
               marginTop: 0,
               zIndex: 1,
@@ -203,7 +205,7 @@ export const PetDashBoard = ({ navigation }) => {
       <View
         style={[
           styles.justifyBetween,
-          { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
+          { marginTop: 30, marginBottom: 10, paddingHorizontal: 25 },
         ]}
       >
         <Text style={styles.SubHeading}>Popular Services</Text>
@@ -221,7 +223,7 @@ export const PetDashBoard = ({ navigation }) => {
           flexWrap: "wrap",
           alignItems: "center",
           justifyContent: "space-between",
-          paddingHorizontal: 20,
+          paddingHorizontal: 25,
         }}
       >
         <Image
@@ -238,7 +240,7 @@ export const PetDashBoard = ({ navigation }) => {
       <View
         style={[
           styles.justifyBetween,
-          { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
+          { marginTop: 30, marginBottom: 10, paddingHorizontal: 25 },
         ]}
       >
         <Text style={styles.SubHeading}>Service Providers</Text>
@@ -319,7 +321,7 @@ export const PetDashBoard = ({ navigation }) => {
                 style={{
                   position: "relative",
                   top: -46,
-                  left: Dimensions.get("window").width*.05,
+                  left: Dimensions.get("window").width * 0.05,
                   zIndex: 1,
                   resizeMode: "cover",
                   borderRadius: 10,
@@ -330,7 +332,7 @@ export const PetDashBoard = ({ navigation }) => {
                 style={{
                   position: "relative",
                   top: -145,
-                  left: Dimensions.get("window").width*.805,
+                  left: Dimensions.get("window").width * 0.805,
                   zIndex: 1,
                   resizeMode: "cover",
                   borderRadius: 10,
@@ -343,7 +345,7 @@ export const PetDashBoard = ({ navigation }) => {
       <View
         style={[
           styles.justifyBetween,
-          { marginTop: 20, marginBottom: 10, paddingHorizontal: 20 },
+          { marginTop: 20, marginBottom: 10, paddingHorizontal: 25 },
         ]}
       >
         <Text style={styles.SubHeading}>Ratings</Text>
