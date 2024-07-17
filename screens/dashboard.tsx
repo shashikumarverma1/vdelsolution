@@ -65,69 +65,77 @@ export const Dashboard = ({ navigation }) => {
           </View>
         </View>
       </LinearGradient>
-     <View style={{}}>
-     <View
-        style={[
-          styles.justifyBetween,
-          {
-            marginTop: 20,
-            backgroundColor: "#EDFFCE",
-            paddingHorizontal: 20,
-            maxWidth: "80%",
-            borderTopEndRadius: 20,
-            borderBottomEndRadius: 20,
-            position: "relative",
-            top: -150,
-            borderTopLeftRadius: 20,
-          },
-        ]}
-      >
-        <View>
-          <Text
-            style={{
-              fontSize: 18,
-              fontWeight: "400",
-              lineHeight: 24,
-              marginBottom: 5,
-              paddingTop: 30,
-            }}
-          >
-            Welcome,
-          </Text>
-          <Text
-            style={{
-              fontWeight: "600",
-              fontSize: 24,
-              lineHeight: 28,
-              maxWidth: 200,
-              marginBottom: 5,
-            }}
-          >
-            Find your {"     "} Dream Sector!
-          </Text>
+      <View style={{}}>
+        <View
+          style={[
+            styles.justifyBetween,
+            {
+              marginTop: 20,
+              backgroundColor: "#EDFFCE",
+              paddingHorizontal: 20,
+              maxWidth: "80%",
+              borderTopEndRadius: 20,
+              borderBottomEndRadius: 20,
+              position: "relative",
+              top: -150,
+              borderTopLeftRadius: 20,
+            },
+          ]}
+        >
+          <View>
+            <Text
+              style={{
+                fontSize: 18,
+                fontWeight: "400",
+                lineHeight: 24,
+                marginBottom: 5,
+                paddingTop: 30,
+              }}
+            >
+              Welcome,
+            </Text>
+            <Text
+              style={{
+                fontWeight: "600",
+                fontSize: 24,
+                lineHeight: 28,
+                maxWidth: 200,
+                marginBottom: 5,
+              }}
+            >
+              Find your {"     "} Dream Sector!
+            </Text>
 
-         <View style={[{display:"flex" ,flexDirection:"row" ,alignItems:"center"}, styles.input , {  width:windowWidth*.65}]}>
-         <Image
-            source={require("../assets/Search2.png")}
-           
-          />
-         <TextInput
-            style={{paddingLeft:5, fontWeight:"400" , fontSize:12 , lineHeight:14}}
-            // onChangeText={(e) => setUserData({ ...userData, email: e })}
-            // value={userData.email}
-            placeholder="What are you looking for?"
-          />
-         </View>
-        </View>
+            <View
+              style={[
+                { display: "flex", flexDirection: "row", alignItems: "center" },
+                styles.input,
+                { width: windowWidth * 0.65 },
+              ]}
+            >
+              <Image source={require("../assets/Search2.png")} />
+              <TextInput
+                style={{
+                  paddingLeft: 5,
+                  fontWeight: "400",
+                  fontSize: 12,
+                  lineHeight: 14,
+                }}
+                // onChangeText={(e) => setUserData({ ...userData, email: e })}
+                // value={userData.email}
+                placeholder="What are you looking for?"
+              />
+            </View>
+          </View>
 
-        <View>
-          <Image
-            source={require("../assets/welRight.png")}
-            style={{ position: "relative", left: -64 }}
-          />
+          <View>
+            <Image
+              source={require("../assets/welRight.png")}
+              style={{ position: "relative", left: -64 }}
+            />
+          </View>
         </View>
       </View>
-     </View>
       <View>
         <View
           style={{
@@ -160,11 +168,7 @@ export const Dashboard = ({ navigation }) => {
           <Text style={styles.SubHeading}>Explore Categories</Text>
           <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
             <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
-              <Ionicons
-                name="ellipsis-horizontal"
-                size={24}
-                color="black"
-              />
+              <Ionicons name="ellipsis-horizontal" size={24} color="black" />
             </Text>
           </Pressable>
         </View>
@@ -188,9 +192,10 @@ export const Dashboard = ({ navigation }) => {
                     navigation.navigate("PetDashBoard");
                   }}
                 >
-                  <Text style={{ paddingLeft: 15 }}>
-                    <Ionicons name={e.icon} size={24} color="black" />
-                  </Text>
+                  <Image
+                 source={require("../assets/icon1.png")}
+
+                  />
                   <Text style={styles.categoryText}>{e.text}</Text>
                 </Pressable>
               </LinearGradient>
@@ -207,11 +212,7 @@ export const Dashboard = ({ navigation }) => {
         <Text style={styles.popularSection}>Popular Sectors</Text>
         <Pressable>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
-            <Ionicons
-              name="ellipsis-horizontal"
-              size={24}
-              color="black"
-            />
+            <Ionicons name="ellipsis-horizontal" size={24} color="black" />
           </Text>
         </Pressable>
       </View>
@@ -230,11 +231,7 @@ export const Dashboard = ({ navigation }) => {
         <Text style={styles.popularSection}>Recommended for you</Text>
         <Pressable>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
-            <Ionicons
-              name="ellipsis-horizontal"
-              size={24}
-              color="black"
-            />
+            <Ionicons name="ellipsis-horizontal" size={24} color="black" />
           </Text>
         </Pressable>
       </View>
