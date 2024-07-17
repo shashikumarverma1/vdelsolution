@@ -75,7 +75,7 @@ export const PetDashBoard = ({ navigation }) => {
           />
           <View
             style={[
-              { padding: 10, backgroundColor: "#FFD7E5", borderRadius: 9 },
+              { padding: 10,paddingLeft:15, backgroundColor: "#FFD7E5", borderRadius: 9 },
             ]}
           >
             <Image
@@ -145,14 +145,14 @@ export const PetDashBoard = ({ navigation }) => {
           zIndex: 1,
         }}
       />
-      <View style={{ marginTop: -85 }}>
+      <View style={{ marginTop: -95 }}>
         <View
           style={[
             styles.justifyBetween,
             {
               // backgroundColor: "#FFEDF2",
               marginHorizontal: 20,
-              marginBottom: 15,
+              marginBottom: 1,
               marginTop: 0,
               zIndex: 1,
             },
@@ -318,8 +318,8 @@ export const PetDashBoard = ({ navigation }) => {
                 source={require("../assets/providerBottomLeft.png")}
                 style={{
                   position: "relative",
-                  top: -50,
-                  left: 18,
+                  top: -46,
+                  left: Dimensions.get("window").width*.05,
                   zIndex: 1,
                   resizeMode: "cover",
                   borderRadius: 10,
@@ -330,7 +330,7 @@ export const PetDashBoard = ({ navigation }) => {
                 style={{
                   position: "relative",
                   top: -145,
-                  left: 316,
+                  left: Dimensions.get("window").width*.805,
                   zIndex: 1,
                   resizeMode: "cover",
                   borderRadius: 10,
@@ -406,7 +406,7 @@ export const PetDashBoard = ({ navigation }) => {
                   <Image
                     source={require("../assets/pooja1.png")}
                     style={{
-                      marginLeft: -35,
+                      marginLeft: -50,
                       borderBottomRightRadius: 20,
                       borderTopRightRadius: 20,
                     }}
@@ -416,7 +416,7 @@ export const PetDashBoard = ({ navigation }) => {
                   <Image
                     source={require("../assets/pooja2.png")}
                     style={{
-                      marginLeft: -35,
+                      marginLeft: -50,
                       borderBottomRightRadius: 20,
                       borderTopRightRadius: 20,
                     }}

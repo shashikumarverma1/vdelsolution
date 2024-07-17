@@ -114,7 +114,7 @@ export const Dashboard = ({ navigation }) => {
               style={[
                 { display: "flex", flexDirection: "row", alignItems: "center" },
                 styles.input,
-                { width: windowWidth * 0.65 },
+                { width: windowWidth * 0.68 },
               ]}
             >
               <Image source={require("../assets/Search2.png")} />
@@ -124,10 +124,12 @@ export const Dashboard = ({ navigation }) => {
                   fontWeight: "400",
                   fontSize: 12,
                   lineHeight: 14,
+                  // color:"#959595"
                 }}
-                // onChangeText={(e) => setUserData({ ...userData, email: e })}
-                // value={userData.email}
+                // onChangeText={(e) =>{}}
+                // value={""}
                 placeholder="What are you looking for?"
+                 placeholderTextColor="#959595"
               />
             </View>
           </View>
@@ -135,7 +137,7 @@ export const Dashboard = ({ navigation }) => {
           <View>
             <Image
               source={require("../assets/welRight.png")}
-              style={{ position: "relative", left: -64 }}
+              style={{ position: "relative", left: -windowWidth*.19 }}
             />
           </View>
         </View>
@@ -309,6 +311,10 @@ export const Dashboard = ({ navigation }) => {
             source={require("../assets/bottomleft.png")}
             style={styles.bottomLeft}
           />
+           <Image
+            source={require("../assets/bollbottomleft.png")}
+            style={styles.bottomLeftboll}
+          />
         </View>
       ))}
     </ScrollView>
@@ -377,7 +383,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "800",
     maxWidth: 186,
-    textAlign: "justify",
+    // textAlign: "justify",
     lineHeight: 18,
   },
   exploreBtn: {
@@ -388,24 +394,32 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
     borderRadius: 100,
+    color:"#ffffff"
   },
   overboll: {
     position: "relative",
-    left: 10,
-    borderRadius: 15,
+    left: 4,
+    borderTopRightRadius:15,
     top: -20,
   },
   rightTop: {
     position: "relative",
-    left: -50,
-    borderRadius: 15,
+    left: -Dimensions.get("window").width*.15,
     top: -22,
     zIndex: -1,
+    borderTopRightRadius:15,
   },
   bottomLeft: {
     position: "relative",
     top: -26,
-    left: 20,
+    left: Dimensions.get("window").width*.05,
+    borderBottomLeftRadius:15,
+  },
+  bottomLeftboll:{
+    position: "relative",
+    top: -53,
+    left: Dimensions.get("window").width*.05,
+    borderBottomLeftRadius:15,
   },
   input: {
     // width: "100%",
