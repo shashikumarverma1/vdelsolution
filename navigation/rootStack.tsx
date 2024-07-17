@@ -9,7 +9,7 @@ function RootStack() {
     <Stack.Navigator
       screenOptions={{ animationEnabled: false, headerShown: false }}
     >
-        <Stack.Screen name="Home" component={Dashboard} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
       <Stack.Screen name="PetDashBoard" component={PetDashBoard} />
     
     </Stack.Navigator>

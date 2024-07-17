@@ -61,10 +61,14 @@ export const PetDashBoard = ({ navigation }) => {
             marginBottom: 40,
           }}
         >
-          <Image
-            source={require("../assets/menu2.png")}
-            style={{ marginRight: 5 }}
-          />
+          <Pressable onPress={() => navigation.openDrawer()}>
+           
+            <Image
+              source={require("../assets/menu2.png")}
+              style={{ marginRight: 5 }}
+            />
+          </Pressable>
+
           <Image
             source={require("../assets/infinity2.png")}
             style={{ marginRight: 5 }}
@@ -108,7 +112,11 @@ export const PetDashBoard = ({ navigation }) => {
           />
           <Image
             source={require("../assets/rightdogfoot.png")}
-            style={{ position: "relative", left: windowWidth * 0.85, top: -100 }}
+            style={{
+              position: "relative",
+              left: windowWidth * 0.85,
+              top: -100,
+            }}
           />
         </View>
         <View
@@ -137,56 +145,59 @@ export const PetDashBoard = ({ navigation }) => {
           zIndex: 1,
         }}
       />
-     <View style={{marginTop:-85}}>
-     <View
-        style={[
-          styles.justifyBetween,
-          {
-            // backgroundColor: "#FFEDF2",
-            marginHorizontal: 20,
-            marginBottom: 15,
-            marginTop:0,
-            zIndex:1
-          },
-        ]}
-      >
+      <View style={{ marginTop: -85 }}>
         <View
           style={[
-            styles.input,
+            styles.justifyBetween,
             {
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-              paddingHorizontal: 16,
+              // backgroundColor: "#FFEDF2",
+              marginHorizontal: 20,
+              marginBottom: 15,
+              marginTop: 0,
+              zIndex: 1,
             },
           ]}
         >
           <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
+            style={[
+              styles.input,
+              {
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                paddingHorizontal: 16,
+              },
+            ]}
           >
-            <Image
-              source={require("../assets/search.png")}
-              style={{ marginRight: 5 }}
-            />
-            <TextInput
-              // style={styles.input}
-              // onChangeText={(e) => setUserData({ ...userData, email: e })}
-              // value={userData.email}
-              placeholder="Enter your email"
-            />
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Image
+                source={require("../assets/search.png")}
+                style={{ marginRight: 5 }}
+              />
+              <TextInput
+                // style={styles.input}
+                // onChangeText={(e) => setUserData({ ...userData, email: e })}
+                // value={userData.email}
+                placeholder="Enter your email"
+              />
+            </View>
+            <Image source={require("../assets/filter.png")} />
           </View>
-          <Image source={require("../assets/filter.png")} />
         </View>
       </View>
-     </View>
 
       <View style={styles.center}>
-        <Image source={require("../assets/banner.png")} style={{marginTop:-5}} />
+        <Image
+          source={require("../assets/banner.png")}
+          style={{ marginTop: -5 }}
+        />
       </View>
 
       <View
@@ -198,11 +209,7 @@ export const PetDashBoard = ({ navigation }) => {
         <Text style={styles.SubHeading}>Popular Services</Text>
         <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
-            <Ionicons
-              name="ellipsis-horizontal"
-              size={24}
-              color="black"
-            />
+            <Ionicons name="ellipsis-horizontal" size={24} color="black" />
           </Text>
         </Pressable>
       </View>
@@ -237,16 +244,12 @@ export const PetDashBoard = ({ navigation }) => {
         <Text style={styles.SubHeading}>Service Providers</Text>
         <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
-            <Ionicons
-              name="ellipsis-horizontal"
-              size={24}
-              color="black"
-            />
+            <Ionicons name="ellipsis-horizontal" size={24} color="black" />
           </Text>
         </Pressable>
       </View>
       <View>
-        {[1,1,2].map((e, index) => {
+        {[1, 1, 2].map((e, index) => {
           return (
             <View style={{ marginVertical: 5, marginBottom: -90 }} key={index}>
               <View
@@ -346,11 +349,7 @@ export const PetDashBoard = ({ navigation }) => {
         <Text style={styles.SubHeading}>Ratings</Text>
         <Pressable onPress={() => navigation.navigate("TrendingCoin")}>
           <Text style={[styles.SubHeading, { color: "#0D88C3" }]}>
-            <Ionicons
-              name="ellipsis-horizontal"
-              size={24}
-              color="black"
-            />
+            <Ionicons name="ellipsis-horizontal" size={24} color="black" />
           </Text>
         </Pressable>
       </View>
